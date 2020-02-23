@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Development</title>
+    <title>Timesheet.js</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/go.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
@@ -14,49 +15,52 @@
 
       <h1> Timeline.js </h1>
       <!-- <h3>Welcome to the Awesome application</h3> -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Full feature <strong>Timeline Chart</strong> with interactions such as zoom, scroll, and translation. Dynamic timescale for infinite scrolling and zooming. Customizable through CSS styling.</p>
       <div id='timeline-chart'></div>
 
-<code class="bg-secondary">
-  <pre>
-    const div = document.getElementById('timeline-chart')
+<pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">const</span> div <span style="color:#d2cd86; ">=</span> document<span style="color:#d2cd86; ">.</span>getElementById<span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">timeline-chart</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">)</span>
 
-    let data = [
-        {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
-          start: new Date(2018, 1, 1),
-          end: new Date(2018, 4, 1),
-          color: '#65587f'
-        },
-        {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
-          start: new Date(2018, 3, 1),
-          end: new Date(2018, 7, 1),
-          color: '#f18867'
-        },
-        {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
-          start: new Date(2018, 2, 15),
-          end: new Date(2018, 9, 1),
-          color: '#e85f99'
-        },
-        {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
-          start: new Date(2018, 7, 20),
-          end: new Date(2018, 11, 15),
-          color: '#50bda1'
-        },
-    ]
+<span style="color:#e66170; font-weight:bold; ">let</span> data <span style="color:#d2cd86; ">=</span> <span style="color:#d2cd86; ">[</span>
+    <span style="color:#b060b0; ">{</span>
+      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
+      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">4</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#65587f</span><span style="color:#02d045; ">'</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+    <span style="color:#b060b0; ">{</span>
+      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
+      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">3</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">7</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#f18867</span><span style="color:#02d045; ">'</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+    <span style="color:#b060b0; ">{</span>
+      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
+      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">2</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">15</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">9</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#e85f99</span><span style="color:#02d045; ">'</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+    <span style="color:#b060b0; ">{</span>
+      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
+      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">7</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">20</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">11</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">15</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
+      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#50bda1</span><span style="color:#02d045; ">'</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
+<span style="color:#d2cd86; ">]</span>
 
-    let chart = new timeline.chart(div, 600, 300)
-    chart.setData(data)
-    </pre>
-  </code>
+<span style="color:#e66170; font-weight:bold; ">let</span> chart <span style="color:#d2cd86; ">=</span> <span style="color:#e66170; font-weight:bold; ">new</span> timeline<span style="color:#d2cd86; ">.</span>chart<span style="color:#d2cd86; ">(</span>div<span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">700</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">300</span><span style="color:#d2cd86; ">)</span>
+chart<span style="color:#d2cd86; ">.</span>setData<span style="color:#d2cd86; ">(</span>data<span style="color:#d2cd86; ">)</span>
+</pre>
+
     </div>
   </body>
 
   <script type="text/javascript" src="timeline.bundle.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        // hljs.highlightBlock(block);
+      });
+    });
     const div = document.getElementById('timeline-chart')
 
     let data = [
@@ -86,7 +90,7 @@
         },
     ]
 
-    let chart = new timeline.chart(div, 600, 300)
+    let chart = new timeline.chart(div, 700, 300)
     chart.setData(data)
   </script>
 
