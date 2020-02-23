@@ -3,21 +3,18 @@ h1 {
 }
 
 p {
-  max-width: 600px;
-  margin: 20px
+  margin: 20px;
+  width: 700px;
 }
 
 code {
-  width: 600px;
-  padding: 20px 10px;
-  margin: 20px 0;
-
-
-  color: #FFF;
+  color: #FFF !important;
 }
 pre {
-  color: #FFF;
-
+  margin: 20px 0;
+  padding: 20px 40px;
+  width: 700px;
+  font-size: 9pt;
 }
 
 .container {
