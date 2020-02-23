@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Development</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+    
+  <body>
+    <div class="container">
+
+      <h1> Timeline.js </h1>
+      <!-- <h3>Welcome to the Awesome application</h3> -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div id='timeline-chart'></div>
+
+<code class="bg-secondary">
+  <pre>
+    const div = document.getElementById('timeline-chart')
+
+    let data = [
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 1, 1),
+          end: new Date(2018, 4, 1),
+          color: '#65587f'
+        },
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 3, 1),
+          end: new Date(2018, 7, 1),
+          color: '#f18867'
+        },
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 2, 15),
+          end: new Date(2018, 9, 1),
+          color: '#e85f99'
+        },
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 7, 20),
+          end: new Date(2018, 11, 15),
+          color: '#50bda1'
+        },
+    ]
+
+    let chart = new timeline.chart(div, 600, 300)
+    chart.setData(data)
+    </pre>
+  </code>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="timeline.bundle.js"></script>
+  <script>
+    const div = document.getElementById('timeline-chart')
+
+    let data = [
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 1, 1),
+          end: new Date(2018, 4, 1),
+          color: '#65587f'
+        },
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 3, 1),
+          end: new Date(2018, 7, 1),
+          color: '#f18867'
+        },
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 2, 15),
+          end: new Date(2018, 9, 1),
+          color: '#e85f99'
+        },
+        {
+          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          start: new Date(2018, 7, 20),
+          end: new Date(2018, 11, 15),
+          color: '#50bda1'
+        },
+    ]
+
+    let chart = new timeline.chart(div, 600, 300)
+    chart.setData(data)
+  </script>
+
+</html>

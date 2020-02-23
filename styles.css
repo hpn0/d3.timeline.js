@@ -1,0 +1,31 @@
+h1 {
+  margin: 50px
+}
+
+p {
+  max-width: 600px;
+  margin: 20px
+}
+
+code {
+  width: 600px;
+  padding: 20px 10px;
+  margin: 20px 0;
+
+
+  color: #FFF;
+}
+pre {
+  color: #FFF;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;;
+  align-items: center;
+}
+
+
+#timeline-chart {
+}
