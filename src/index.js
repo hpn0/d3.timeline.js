@@ -1,3 +1,3 @@
-function testNum() {
-  return 42;
+export function test() {
+  console.log('hola');
 }

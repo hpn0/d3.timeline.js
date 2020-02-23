@@ -1,8 +1,10 @@
 import * as d3 from 'd3'
-import _ from 'lodash'
 import moment from 'moment'
-import { line, lab, interpolateCubehelixLong } from 'd3';
 
+
+export function test() {
+  console.log('hola');
+}
 
 export function chart(container, width, height) {
   let that = this

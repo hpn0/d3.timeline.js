@@ -4,6 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
+    "redeploy": "webpack",
+    "deploy": "gh-pages -d dist",
     "start": "webpack-dev-server --mode development --host 0.0.0.0 --useLocalIp",
     "build": "webpack",
     "watch": "webpack --watch",
@@ -14,15 +16,15 @@
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "http-server": "^0.12.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^5.1.1",
     "d3": "^5.15.0",
-    "lodash": "^4.17.15",
     "moment": "^2.24.0"
   }
 }
