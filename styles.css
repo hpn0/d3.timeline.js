@@ -2,7 +2,7 @@ h1 {
   margin: 50px
 }
 
-p {
+.description {
   margin: 20px;
   width: 700px;
 }
@@ -24,5 +24,21 @@ pre {
 }
 
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.footer p {
+  font-size: 9pt;
+  color: #444;
+  margin: 0;
+}
+.footer a {
+  color: inherit;
+  font-weight: 600;
+}
 #timeline-chart {
 }
