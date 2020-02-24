@@ -1,3 +1,3 @@
-export function test() {
-  console.log('hola');
-}
+import { chart } from './timeline'
+
+export { chart }

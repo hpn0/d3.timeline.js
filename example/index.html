@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Timesheet.js</title>
+    <title>Timeline.js</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
     <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/go.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -15,7 +15,9 @@
 
       <h1> Timeline.js </h1>
       <!-- <h3>Welcome to the Awesome application</h3> -->
-      <p>Full feature <strong>Timeline Chart</strong> with interactions such as zoom, scroll, and translation. Dynamic timescale for infinite scrolling and zooming. Customizable through CSS styling.</p>
+      <p class="description">
+        Full featured <strong>Timeline</strong> chart with interactions such as zooming, panning, and scrolling. 
+        Dynamic timescale for infinite scrolling.  Make it your own through CSS customization.</p>
       <div id='timeline-chart'></div>
 
 <pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">const</span> div <span style="color:#d2cd86; ">=</span> document<span style="color:#d2cd86; ">.</span>getElementById<span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">timeline-chart</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">)</span>
@@ -50,17 +52,23 @@
 <span style="color:#e66170; font-weight:bold; ">let</span> chart <span style="color:#d2cd86; ">=</span> <span style="color:#e66170; font-weight:bold; ">new</span> timeline<span style="color:#d2cd86; ">.</span>chart<span style="color:#d2cd86; ">(</span>div<span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">700</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">300</span><span style="color:#d2cd86; ">)</span>
 chart<span style="color:#d2cd86; ">.</span>setData<span style="color:#d2cd86; ">(</span>data<span style="color:#d2cd86; ">)</span>
 </pre>
+    </div>
 
+    <div class="footer">
+      <p>
+        <a href="https://github.com/hpn0/d3.timeline.js">Timeline.js</a> is licensed under <a href="https://github.com/hpn0/d3.timeline.js/blob/master/LICENSE">MIT License</a>
+      </p>
+      <p>
+        Created by <span><a href="https://github.com/hpn0">@hpn0</a></span>
+      </p>
+      <p>
+        Inspired by <a href="https://sbstjn.github.io/timesheet.js/">Timesheet.js</a> 
+      </p>
     </div>
   </body>
 
   <script type="text/javascript" src="timeline.bundle.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('pre code').forEach((block) => {
-        // hljs.highlightBlock(block);
-      });
-    });
     const div = document.getElementById('timeline-chart')
 
     let data = [
@@ -90,7 +98,7 @@ chart<span style="color:#d2cd86; ">.</span>setData<span style="color:#d2cd86; ">
         },
     ]
 
-    let chart = new timeline.chart(div, 700, 300)
+    let chart = new timeline.chart(div, 700, 300, {'background-color': '#f9f7f1'})
     chart.setData(data)
   </script>
 

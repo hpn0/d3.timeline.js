@@ -2,11 +2,8 @@ import * as d3 from 'd3'
 import moment from 'moment'
 
 
-export function test() {
-  console.log('hola');
-}
 
-export function chart(container, width, height) {
+export function chart(container, width, height, options) {
   let that = this
 
   let timeScale = d3.scaleTime()
@@ -23,9 +20,19 @@ export function chart(container, width, height) {
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .style("border", "2px solid orange")
+    // .style("border", "2px solid orange")
 
   let axis = svg.append("g")
+
+  svg.append("g").append('line')
+    .attr('x1', 0)
+    .attr('y1', 16)
+    .attr('x2', width)
+    .attr('y2', 16)
+    .attr("stroke-width", 1 )
+    .attr("stroke", 'black' )
+    .attr("stroke-opacity", 0.5)
+
   let axis2 = svg.append("g")
     .attr('transform', 'translate(0, 17)')
 
@@ -93,9 +100,10 @@ function drawAxis(g, scale) {
             .tickFormat(d => moment(d).format('MMM'))
             .tickSizeOuter(-300)
     )
-    .call(g => g.select(".domain")
+    .call(g => g.select(".domain").remove())
       // .attr("stroke-dasharray", "10,2")
-      .attr("stroke-opacity", 0.5))
+      
+      // .attr("stroke-opacity", 0.5))
     .call(g => g.selectAll(".tick line")
       .attr("stroke-opacity", 0.5)
       .attr("stroke-dasharray", "2,2"))
@@ -164,12 +172,13 @@ let drawForeground = (fg, data, scale) => {
           .attr("fill", "black")
       )
 
-    let box = textNode.node().getBBox();
-    label.insert('rect', 'text')
-      .attr('width', box.width)
-      .attr('height', box.height)
-      .attr('fill', 'white')
-      .attr('y', '10')
+    // TODO this will add a solid background behind the text for better readability
+    // let box = textNode.node().getBBox();
+    // label.insert('rect', 'text')
+    //   .attr('width', box.width)
+    //   .attr('height', box.height)
+    //   .attr('fill', 'white')
+    //   .attr('y', '10')
    
   }
 
