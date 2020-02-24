@@ -1,10 +1,18 @@
+body {
+  background-color: #f9f7f1;
+}
 h1 {
-  margin: 50px
+  font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 50px;
+    display: inline-block;
+    line-height: 72px;
+    margin-bottom: 20px;
 }
 
 .description {
-  margin: 20px;
   width: 700px;
+  font-size: 10pt;
 }
 
 code {
@@ -41,4 +49,5 @@ pre {
   font-weight: 600;
 }
 #timeline-chart {
+  margin: 20px 0;
 }

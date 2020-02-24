@@ -15,7 +15,7 @@
 
       <h1> Timeline.js </h1>
       <!-- <h3>Welcome to the Awesome application</h3> -->
-      <p class="description">Full feature <strong>Timeline Chart</strong> with interactions such as zoom, scroll, and translation. Dynamic timescale for infinite scrolling and zooming. Customizable through CSS styling.</p>
+      <p class="description">Full featured <strong>Timeline</strong> chart with interactions such as zooming, panning, and scrollng. Dynamic timescale for infinite scrolling and zooming. Customizable through CSS styling.</p>
       <div id='timeline-chart'></div>
 
 <pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">const</span> div <span style="color:#d2cd86; ">=</span> document<span style="color:#d2cd86; ">.</span>getElementById<span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">timeline-chart</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">)</span>
@@ -97,7 +97,7 @@ chart<span style="color:#d2cd86; ">.</span>setData<span style="color:#d2cd86; ">
         },
     ]
 
-    let chart = new timeline.chart(div, 700, 300)
+    let chart = new timeline.chart(div, 700, 300, {'background-color': '#f9f7f1'})
     chart.setData(data)
   </script>
 
