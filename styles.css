@@ -4,7 +4,7 @@ body {
 h1 {
   font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 50px;
+    font-size: 60px;
     display: inline-block;
     line-height: 72px;
     margin: 10px 0px 20px 0px;
@@ -12,17 +12,13 @@ h1 {
 
 .description {
   width: 700px;
-  font-size: 10pt;
 }
 
-code {
-  color: #FFF !important;
-}
-pre {
-  margin: 20px 0;
-  padding: 20px 40px;
+.code {
   width: 700px;
-  font-size: 9pt;
+  /* width: 100%; */
+  font-size: 10pt;
+  margin: 30px;
 }
 
 .container {
@@ -40,7 +36,7 @@ pre {
 }
 
 .footer p {
-  font-size: 9pt;
+  font-size: 10pt;
   color: #444;
   margin: 0;
 }

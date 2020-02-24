@@ -20,38 +20,41 @@
         Dynamic timescale for infinite scrolling.  Make it your own through CSS customization.</p>
       <div id='timeline-chart'></div>
 
-<pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">const</span> div <span style="color:#d2cd86; ">=</span> document<span style="color:#d2cd86; ">.</span>getElementById<span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">timeline-chart</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">)</span>
+      <!-- HTML generated using hilite.me -->
+  <div class="code" style="background: #272822; overflow:auto;border:solid gray;border-width:.0;padding:1em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #66d9ef">const</span> <span style="color: #a6e22e">div</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">document.</span><span style="color: #a6e22e">getElementById</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;timeline-chart&#39;</span><span style="color: #f8f8f2">)</span>
 
-<span style="color:#e66170; font-weight:bold; ">let</span> data <span style="color:#d2cd86; ">=</span> <span style="color:#d2cd86; ">[</span>
-    <span style="color:#b060b0; ">{</span>
-      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
-      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">4</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#65587f</span><span style="color:#02d045; ">'</span>
-    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
-    <span style="color:#b060b0; ">{</span>
-      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
-      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">3</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">7</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#f18867</span><span style="color:#02d045; ">'</span>
-    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
-    <span style="color:#b060b0; ">{</span>
-      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
-      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">2</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">15</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">9</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#e85f99</span><span style="color:#02d045; ">'</span>
-    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
-    <span style="color:#b060b0; ">{</span>
-      title<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">Lorem ipsum dolor sit amet, blandit fusce aliquet</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span>
-      start<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">7</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">20</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      end<span style="color:#b060b0; ">:</span> <span style="color:#e66170; font-weight:bold; ">new</span> Date<span style="color:#d2cd86; ">(</span><span style="color:#008c00; ">2018</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">11</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">15</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">,</span>
-      color<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">#50bda1</span><span style="color:#02d045; ">'</span>
-    <span style="color:#b060b0; ">}</span><span style="color:#d2cd86; ">,</span>
-<span style="color:#d2cd86; ">]</span>
+    <span style="color: #66d9ef">let</span> <span style="color: #a6e22e">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span>
+        <span style="color: #f8f8f2">{</span>
+          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
+          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#65587f&#39;</span>
+        <span style="color: #f8f8f2">},</span>
+        <span style="color: #f8f8f2">{</span>
+          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
+          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#f18867&#39;</span>
+        <span style="color: #f8f8f2">},</span>
+        <span style="color: #f8f8f2">{</span>
+          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
+          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">9</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#e85f99&#39;</span>
+        <span style="color: #f8f8f2">},</span>
+        <span style="color: #f8f8f2">{</span>
+          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
+          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">20</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">11</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">),</span>
+          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#50bda1&#39;</span>
+        <span style="color: #f8f8f2">},</span>
+    <span style="color: #f8f8f2">]</span>
 
-<span style="color:#e66170; font-weight:bold; ">let</span> chart <span style="color:#d2cd86; ">=</span> <span style="color:#e66170; font-weight:bold; ">new</span> timeline<span style="color:#d2cd86; ">.</span>chart<span style="color:#d2cd86; ">(</span>div<span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">700</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">300</span><span style="color:#d2cd86; ">)</span>
-chart<span style="color:#d2cd86; ">.</span>setData<span style="color:#d2cd86; ">(</span>data<span style="color:#d2cd86; ">)</span>
-</pre>
+    <span style="color: #66d9ef">let</span> <span style="color: #a6e22e">chart</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">timeline</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">chart</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">div</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">700</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">300</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">{</span><span style="color: #e6db74">&#39;background-color&#39;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#f9f7f1&#39;</span><span style="color: #f8f8f2">})</span>
+    <span style="color: #a6e22e">chart</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">setData</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">data</span><span style="color: #f8f8f2">)</span>
+</pre></div>
+
+
     </div>
 
     <div class="footer">
