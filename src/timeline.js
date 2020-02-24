@@ -7,7 +7,7 @@ export function chart(container, width, height, options) {
   let that = this
 
   let timeScale = d3.scaleTime()
-    .domain([new Date(2018, 0, 1), new Date(2019, 0, 1)])
+    .domain([new Date(2017, 10, 15), new Date(2019, 2, 15)])
     .range([0, width]);
 
   let scaleX = timeScale 
