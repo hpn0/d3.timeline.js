@@ -1,20 +1,22 @@
 import * as d3 from 'd3'
 import moment from 'moment'
+import { schemeDark2 } from 'd3';
 
 
 
 export function chart(container, width, height, options) {
   let that = this
 
-  let timeScale = d3.scaleTime()
+  let origScaleX = d3.scaleTime()
     .domain([new Date(2017, 10, 15), new Date(2019, 2, 15)])
     .range([0, width]);
 
-  let scaleX = timeScale 
-
-  let scaleY = d3.scaleLinear()
+  let origScaleY = d3.scaleLinear()
     .domain([0, height])
     .range([0, height]);
+
+  this.scaleX = origScaleX
+  this.scaleY = origScaleY
 
   let svg = d3.select(container)
     .append("svg")
@@ -42,41 +44,41 @@ export function chart(container, width, height, options) {
     .attr("width", width)         // set the x radius
     .attr("height", height);         // set the y radius
 
+  svg.append("g")
+    .attr('transform', 'translate(0, 60)') 
+    .attr("clip-path", "url(#main-area)") // clip the rectangle
+    .attr("class", "fg")
 
   let updateChart = () => {
-    let newScaleX = d3.event.transform.rescaleX(timeScale);
-    drawYear(axis, newScaleX)
-    drawAxis(axis2, newScaleX)
-    updatePosition(svg, that.data, newScaleX, scaleY)
-    this.scaleX = newScaleX;
+    this.scaleX = d3.event.transform.rescaleX(origScaleX);
+    let k = d3.event.transform.k
+    d3.event.transform.k = 1;
+    this.scaleY = d3.event.transform.rescaleY(origScaleY);
+    d3.event.transform.k = k;
+    drawYear(axis, this.scaleX)
+    drawAxis(axis2, this.scaleX)
+    updatePosition(svg, that.data, this.scaleX, this.scaleY)
+
   }
 
   let zoom = d3.zoom()
       .scaleExtent([.25, 2])  // This control how much you can unzoom (x0.5) and zoom (x20)
       .extent([[0, 0], [width, height]])
-      .on("zoom", updateChart);
+      .on("zoom", updateChart)
 
-  svg.append("rect")
-      .attr("width", width)
-      .attr("height", height)
-      .style("fill", "none")
-      .style("pointer-events", "all")
-      .call(zoom);
+  svg.call(zoom)
 
-  drawYear(axis, scaleX)
-  drawAxis(axis2, scaleX)
+  drawYear(axis, this.scaleX)
+  drawAxis(axis2, this.scaleX)
   this.width = width
   this.height = height
   this.svg = svg 
-  this.scaleX = scaleX
 }
 
 chart.prototype.setData = function(data) {
   this.data = data
+  let fg = this.svg.select('.fg')
 
-  let fg = this.svg.append("g")
-    .attr('transform', 'translate(0, 60)') 
-    .attr("clip-path", "url(#main-area)") // clip the rectangle
   drawForeground(fg, this.data, this.scaleX)
 }
 
@@ -101,15 +103,13 @@ function drawAxis(g, scale) {
             .tickSizeOuter(-300)
     )
     .call(g => g.select(".domain").remove())
-      // .attr("stroke-dasharray", "10,2")
-      
-      // .attr("stroke-opacity", 0.5))
     .call(g => g.selectAll(".tick line")
       .attr("stroke-opacity", 0.5)
       .attr("stroke-dasharray", "2,2"))
     .call(g => g.selectAll(".tick text")
       .attr("y", 8)
       .attr("dx", 15))
+
 }
 
 
@@ -124,11 +124,13 @@ let updatePosition = (fg, data, scaleX, scaleY) => {
   fg
     .selectAll('.lane').data(data)
     .transition()
+    .duration(10)
     .call(updateLane)
 
   fg
     .selectAll('.bar').data(data)
     .transition()
+    .duration(10)
     .call(updateBar)
 }
 
@@ -144,6 +146,14 @@ let drawForeground = (fg, data, scale) => {
         .attr('width', range => scale(range.end) - scale(range.start))
         .attr('height', 8)
         .attr('fill', range => range.color)
+        .on("mouseover", function(range) {
+          d3.select(this).attr('fill', "orange");
+          d3.select(this).attr('cursor', "pointer");
+        })
+        .on("mouseout", function(range) {
+          d3.select(this).attr('fill', range.color);
+          d3.select(this).attr('cursor', "default");
+        })
   }
 
   let drawLabel= (g) => {
