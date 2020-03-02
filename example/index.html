@@ -19,43 +19,52 @@
         Full featured <strong>Timeline</strong> chart with interactions such as zooming, panning, and scrolling. 
         Dynamic timescale for infinite scrolling.  Make it your own through CSS customization.</p>
       <div id='timeline-chart'></div>
+      <p><small><span id="clickText"></span></small></p>
 
-      <!-- HTML generated using hilite.me -->
-  <div class="code" style="background: #272822; overflow:auto;border:solid gray;border-width:.0;padding:1em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #66d9ef">const</span> <span style="color: #a6e22e">div</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">document.</span><span style="color: #a6e22e">getElementById</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;timeline-chart&#39;</span><span style="color: #f8f8f2">)</span>
+<!-- HTML generated using hilite.me -->
+<div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.0;padding:1em .6em;"><pre class="code" style="margin: 0; line-height: 125%">    <span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">div</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">document</span><span style="color: #d0d0d0">.getElementById(</span><span style="color: #ed9d13">&#39;timeline-chart&#39;</span><span style="color: #d0d0d0">)</span>
 
-    <span style="color: #66d9ef">let</span> <span style="color: #a6e22e">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span>
-        <span style="color: #f8f8f2">{</span>
-          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
-          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#65587f&#39;</span>
-        <span style="color: #f8f8f2">},</span>
-        <span style="color: #f8f8f2">{</span>
-          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
-          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#f18867&#39;</span>
-        <span style="color: #f8f8f2">},</span>
-        <span style="color: #f8f8f2">{</span>
-          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
-          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">9</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#e85f99&#39;</span>
-        <span style="color: #f8f8f2">},</span>
-        <span style="color: #f8f8f2">{</span>
-          <span style="color: #a6e22e">title</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #f8f8f2">,</span>
-          <span style="color: #a6e22e">start</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">20</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">end</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Date(</span><span style="color: #ae81ff">2018</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">11</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">),</span>
-          <span style="color: #a6e22e">color</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#50bda1&#39;</span>
-        <span style="color: #f8f8f2">},</span>
-    <span style="color: #f8f8f2">]</span>
+    <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">data</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">[</span>
+        <span style="color: #d0d0d0">{</span>
+          <span style="color: #d0d0d0">title:</span> <span style="color: #ed9d13">&#39;Lorem ipsum dolor sit amet, blandit fusce aliquet&#39;</span><span style="color: #d0d0d0">,</span>
+          <span style="color: #d0d0d0">start:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">end:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">4</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">color:</span> <span style="color: #ed9d13">&#39;#65587f&#39;</span>
+        <span style="color: #d0d0d0">},</span>
+        <span style="color: #d0d0d0">{</span>
+          <span style="color: #d0d0d0">title:</span> <span style="color: #ed9d13">&#39;Sed ut perspiciatis, unde omnis iste natus error sit voluptatem&#39;</span><span style="color: #d0d0d0">,</span>
+          <span style="color: #d0d0d0">start:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">3</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">end:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">7</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">color:</span> <span style="color: #ed9d13">&#39;#f18867&#39;</span>
+        <span style="color: #d0d0d0">},</span>
+        <span style="color: #d0d0d0">{</span>
+          <span style="color: #d0d0d0">title:</span> <span style="color: #ed9d13">&#39;Veritatis et quasi architecto beatae vitae dicta sunt, explicabo&#39;</span><span style="color: #d0d0d0">,</span>
+          <span style="color: #d0d0d0">start:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">2</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">15</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">end:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">9</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">color:</span> <span style="color: #ed9d13">&#39;#e85f99&#39;</span>
+        <span style="color: #d0d0d0">},</span>
+        <span style="color: #d0d0d0">{</span>
+          <span style="color: #d0d0d0">title:</span> <span style="color: #ed9d13">&#39;At vero eos et accusamus et iusto odio dignissimos ducimus&#39;</span><span style="color: #d0d0d0">,</span>
+          <span style="color: #d0d0d0">start:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">7</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">20</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">end:</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #24909d">Date</span><span style="color: #d0d0d0">(</span><span style="color: #3677a9">2018</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">11</span><span style="color: #d0d0d0">,</span> <span style="color: #3677a9">15</span><span style="color: #d0d0d0">),</span>
+          <span style="color: #d0d0d0">color:</span> <span style="color: #ed9d13">&#39;#50bda1&#39;</span>
+        <span style="color: #d0d0d0">},</span>
+    <span style="color: #d0d0d0">]</span>
 
-    <span style="color: #66d9ef">let</span> <span style="color: #a6e22e">chart</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">timeline</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">chart</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">div</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">700</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">300</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">{</span><span style="color: #e6db74">&#39;background-color&#39;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#f9f7f1&#39;</span><span style="color: #f8f8f2">})</span>
-    <span style="color: #a6e22e">chart</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">setData</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">data</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">onClick</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">(range)</span> <span style="color: #d0d0d0">=&gt;</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #24909d">document</span><span style="color: #d0d0d0">.getElementById(</span><span style="color: #ed9d13">&#39;clickText&#39;</span><span style="color: #d0d0d0">).innerHTML</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">JSON.stringify(range)</span>
+    <span style="color: #d0d0d0">}</span>
+
+    <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">chart</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">timeline.chart(div,</span> <span style="color: #d0d0d0">data,</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #d0d0d0">width:</span> <span style="color: #3677a9">800</span><span style="color: #d0d0d0">,</span> 
+      <span style="color: #d0d0d0">height:</span> <span style="color: #3677a9">400</span><span style="color: #d0d0d0">,</span> 
+      <span style="color: #d0d0d0">rangeHeight:</span> <span style="color: #3677a9">12</span><span style="color: #d0d0d0">,</span> 
+      <span style="color: #d0d0d0">rangeCornerRadius:</span> <span style="color: #3677a9">4</span><span style="color: #d0d0d0">,</span> 
+      <span style="color: #d0d0d0">onClick</span>
+    <span style="color: #d0d0d0">})</span>
 </pre></div>
 
-
-    </div>
+<!-- End HTML generated -->
 
     <div class="footer">
       <p>
@@ -82,27 +91,36 @@
           color: '#65587f'
         },
         {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          title: 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem',
           start: new Date(2018, 3, 1),
           end: new Date(2018, 7, 1),
           color: '#f18867'
         },
         {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          title: 'Veritatis et quasi architecto beatae vitae dicta sunt, explicabo',
           start: new Date(2018, 2, 15),
           end: new Date(2018, 9, 1),
           color: '#e85f99'
         },
         {
-          title: 'Lorem ipsum dolor sit amet, blandit fusce aliquet',
+          title: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
           start: new Date(2018, 7, 20),
           end: new Date(2018, 11, 15),
           color: '#50bda1'
         },
     ]
 
-    let chart = new timeline.chart(div, 800, 350, {'background-color': '#f9f7f1'})
-    chart.setData(data)
+    let onClick = (range) => {
+      document.getElementById('clickText').innerHTML = JSON.stringify(range)
+    }
+
+    let chart = new timeline.chart(div, data, {
+      width: 800, 
+      height: 400, 
+      rangeHeight: 12, 
+      rangeCornerRadius: 4, 
+      onClick
+    })
   </script>
 
 </html>
