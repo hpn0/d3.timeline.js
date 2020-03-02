@@ -8,6 +8,10 @@ module.exports = {
 	entry: {
 		timeline: './src/timeline.js',
 	},
+	externals: {
+		moment: 'moment',
+		d3: 'd3',
+	},
 	devtool: 'inline-source-map',
 	devServer: {
     contentBase: './dist',
